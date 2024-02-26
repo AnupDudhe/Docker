@@ -21,5 +21,5 @@ CMD bin/catalina.sh start
 
 
 
-CMD httpd -DFOREGROUND
+
 
