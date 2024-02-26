@@ -1,4 +1,4 @@
-FROM centos:07
+FROM centos:7
 
 LABEL Devops ="Anup_Dudhe"
 
