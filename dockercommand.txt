@@ -34,7 +34,7 @@ docker top containerid  - docker container id top process viewer
 docker run  = pull  + create + save
 
 DOCKER IMAGES
-
+172.17.0.2
 docker build Dockerfilelocation - builds docker image
 
 basic syntax of docker file -
