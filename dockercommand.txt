@@ -4,7 +4,7 @@ docker ps    -- running container
 docker ps -a -- all containers (exited running)
 docker ps -q -- all the container ids (running)
 docker ps -qa -- all containers ids (exer run --name anup ited running)
-dockhttpd  - gives auth name to your container (while cont is running)
+docker run -d name containernam imagename  - gives auth name to your container (while cont is running)
 docker rename  (cont id 809)  (newname of cont b24) - to rename exiting cont
 docker start <container id> - to start the container
 docker stop <container id> - to stop the container
@@ -25,27 +25,21 @@ docker cp source file container_id:/usr/local/nginx/html/index.html
 /usr/local/apache2/htdocs/html/index.html
 
 docker rm -f `docker ps -qa` - will remove all container at once
-docker
-FROM base logs containerid - logs of container
+docker 
+docker logs containerid - logs of container
 docker stats containerid - docker conatainer stats
 docker top containerid  - docker container id top process viewer
-#docker rmi -f $(docker images -q)
-#docker rm -f $(docker ps -a -q)
-
+#docker rmi -f $(docker images -q) - will delete all images at once
+#docker rm -f $(docker ps -a -q)  - will delete all container at once
 docker run  = pull  + create + save
-
-
-
-
-
 
 DOCKER IMAGES
 
-docker build Dockerfilelocation - build docker image
+docker build Dockerfilelocation - builds docker image
 
-
-basic syntax of docker file
+basic syntax of docker file -
 INSTRUCTION arguments
+
 LABEL - KEY - VALUE 
 for eg 
 LABEL  devops - "Anup"
@@ -53,15 +47,17 @@ LABEL  devops - "Anup"
 image 
 for eg
 FROM centos:7
-
+--------------------------------
 RUN command
 for eg
 RUN yum install httpd -y
 
-
+--------------------------------
 EXPOSE port
 for eg
 EXPOSE 80
+--------------------------------
+
 CMD
 for eg- 
 
@@ -70,6 +66,6 @@ CMD ["httpd" , "-DFOREGROUND"]
 
 CMD command param1 param2 
 CMD httpd -DFOREGROUND
-
+----------------------------------
 
 WORKDIR
