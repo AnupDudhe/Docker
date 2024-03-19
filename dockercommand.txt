@@ -84,15 +84,45 @@ ADD source destination
 USER 
 USER root - preferance of user can be performed using this argument.
 -----------------------------------
+ENTRYPOINT  - the mentioned executable using Entrypoint 
+ENTRYPOINT ["executable" , "param1"]
+ENTRYPOINT  executable param1 param2 
+------------------------------------
+HEALTHCHECK - checking health of container on startup
+------------------------------------
+SOURCE - H/W
+------------------------------------
+ENV    - to pass variables
+-------------------------------------
+ARG    - to pass enviornment variables
+ARG <name>[=<default value>]
+-------------------------------------
+SHELL - set default shell to image
+SHELL SHELL ["powershell", "-command"]
+---------------------------------------
+volume
+volume [/mnt] - create volume mounts 
+---------------------------------------
+STOPSIGNAL - kind of working like kill -9 will stop the container process.
+---------------------------------------
+ONBUILD - to provide instruction during when image is used in build.
+ONBUILD instruction
+ONBUILD RUN echo "this image is now built"
+ONBUILD RUN yum install httpd -y
+------------------------------------------------------------
 
-ENTRYPOINT 
-ENTRYPOINT -
-------------------------------------
-HEALTHCHECK
-------------------------------------
-SOURCE 
-------------------------------------
-ENV 
--------------------------------------
-ARG 
--------------------------------------
+Docker Network
+bridge
+host
+none
+overlay
+IPVLAN
+MACVLAN
+
+Docker Drivers
+docker run -d -P network host nginx
+docker network create newnetwork --bridge bridge 
+
+Docker Volume
+docker volume
+docker volume create
