@@ -1,0 +1,6 @@
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql:latest  - will run a defauly mysql docker image and create cont
+docker exec -it contid mysql -u root -p1234 - to log into database
+then insdie mysql >
+ create database studentapp;
+ add the schema in the db.
+ exit.
