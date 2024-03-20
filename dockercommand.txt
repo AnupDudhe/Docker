@@ -84,7 +84,10 @@ ADD source destination
 USER 
 USER root - preferance of user can be performed using this argument.
 -----------------------------------
-ENTRYPOINT  - the mentioned executable using Entrypoint 
+ENTRYPOINT  - the mentioned executable using Entrypoint.
+              by default the mentioned executable will and can be replace only and only by 
+              sudo docker run --entrypoint [new_command] [docker_image] [optional:value] , i.e
+              entrypoint flag only.  
 ENTRYPOINT ["executable" , "param1"]
 ENTRYPOINT  executable param1 param2 
 ------------------------------------
@@ -112,17 +115,28 @@ ONBUILD RUN yum install httpd -y
 ------------------------------------------------------------
 
 Docker Network
-bridge
-host
-none
-overlay
-IPVLAN
-MACVLAN
+DOCKER network drivers or docker network types
+bridge - to connect two different networks , create bridge between two diff networks.
+(eg communication between host and docker container is possible because of bridge)
+overlay - 
+none - 
+host -
+macvlan - 
+IPvlan -
 
-Docker Drivers
-docker run -d -P network host nginx
-docker network create newnetwork --bridge bridge 
-
+Dockernetwork commands
+docker network create --subnet "192.168.0.0/16" --driver bridge newnetwork 
+docker network ls 
+docker run -d -P --network newnetwork nginx
+docker run -d -p --network host httpd
+docker run -d -p --network <network_driver_type> image name
+-----------------------------------------------------------------------
 Docker Volume
-docker volume
-docker volume create
+docker volume ls
+docker volume create newvol1
+docker -d -p -v newvol1:/usr/local/apache2/htdocs/  httpd
+docker -d -p -v newvol1:/usr/share/nginx/html/  nginx
+root dir location - /var/lib/docker/volumes
+mkdir /mnt/voldir
+docker -d -p -v /mnt/voldir:/usr/local/tomcat/ tomcat
+ 
