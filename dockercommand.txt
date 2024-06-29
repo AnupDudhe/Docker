@@ -14,7 +14,7 @@ docker exec <container id> command - without goin inside container you can execu
 docker run  -it <image name> command(bash or sh) - can enter inside container or can execute any command into cont
 docker run  <image name> <command> - can execute command in running container
 docker stats container_id - will give you container stats
-
+docker inspect container_id
 
 port mapping
 docker run -p -d 80:80 nginx --- will port map with container's port with hosts port
