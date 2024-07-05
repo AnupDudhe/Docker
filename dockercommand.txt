@@ -152,3 +152,11 @@ you containers.
 docker compose up .   - where your compose file is present
 docker compose down . 
 docker compose prune  
+
+
+-------------------------------------------------------------------
+Docker registory
+
+docker login
+docker tag imagename dockerhubusername/repositoryname:tag   #image name and repo name should be same
+docker run username/nameofrepo:tag
