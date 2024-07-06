@@ -11,8 +11,8 @@ services:          #default synxtax
         bridge
   frontendnginxsecond:  #naming convention for another container
     build: /root/Docker/nginxdocfile
-    ports:
-      - '81:81'
+    # ports:
+    #   - '81:81'
     container_name: nginxfrontendcontsecond
     network_mode:
         host   
