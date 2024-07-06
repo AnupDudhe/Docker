@@ -15,6 +15,6 @@ services:          #default synxtax
     #   - '81:81'
     container_name: nginxfrontendcontsecond
     network_mode:
-        host   
+        none  
 volumes:   #creating volume
   myapp:     
