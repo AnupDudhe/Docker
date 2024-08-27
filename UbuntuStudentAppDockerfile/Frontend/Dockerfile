@@ -3,7 +3,7 @@ LABEL APP="StudentappFE"
 LABEL DevopsEngg="Anup"
 
 
-RUN yum install apache2 -y
+RUN apt install apache2 -y
 COPY index.html /var/www/html/index.html
 
 EXPOSE 80
