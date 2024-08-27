@@ -17,7 +17,7 @@ ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/a
 COPY context.xml /opt/apache-tomcat-9.0.93/conf/context.xml
 
 # Set permissions and run Tomcat
-RUN chmod +rwx /opt//apache-tomcat-9.0.93/bin/*.sh
+RUN chmod +rwx /opt/apache-tomcat-9.0.93/bin/*.sh
  
 CMD /opt/apache-tomcat-9.0.93/bin/catalina.sh start
  
