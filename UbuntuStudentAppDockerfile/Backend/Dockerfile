@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y wget unzip openjdk-11-jdk
  
 # Download and extract Tomcat
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.zip   /opt
+ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.95/bin/apache-tomcat-9.0.95.zip   /opt
 RUN unzip /opt/apache-tomcat-9.0.93.zip -d /opt
  
 # Set up Tomcat and deploy the WAR file
