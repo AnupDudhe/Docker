@@ -8,12 +8,13 @@ RUN apt-get update && \
  
 # Download and extract Tomcat
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.95/bin/apache-tomcat-9.0.95.zip   /opt
-RUN unzip /opt/apache-tomcat-9.0.93.zip -d /opt
+RUN unzip /opt/apache-tomcat-9.0.95.zip -d /opt
  
 # Set up Tomcat and deploy the WAR file
 WORKDIR /opt/apache-tomcat-9.0.93/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-9.0.93/webapps/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-9.0.93/lib/mysql-connector.jar 
+
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-9.0.95/webapps/
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-9.0.95/lib/mysql-connector.jar 
 COPY context.xml /opt/apache-tomcat-9.0.95/conf/context.xml
 
 # Set permissions and run Tomcat
