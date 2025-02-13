@@ -10,4 +10,4 @@ COPY index.html /var/www/html/index.html
 
 EXPOSE 80
 
-CMD ["httpd", "-DFOREGROUND"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]
