@@ -1,11 +1,11 @@
 services:
       frontend:
-        build: /root/UbuntuStudentAppDockerfile/Frontend/. 
+        build: /root/Docker/UbuntuStudentAppDockerfile/Frontend/. 
         ports:
           - "80:80" 
         container_name: frontend  
       backend:
-        build: /root/UbuntuStudentAppDockerfile/Backend/. 
+        build: /root/Docker/UbuntuStudentAppDockerfile/Backend/. 
         ports:
           - "8080:8080" 
         container_name: backend
