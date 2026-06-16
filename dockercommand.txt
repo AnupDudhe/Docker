@@ -143,6 +143,13 @@ docker run -d -p -v newvol1:/usr/share/nginx/html/  nginx
 root dir location - /var/lib/docker/volumes
 mkdir /mnt/voldir
 docker -d -p -v /mnt/voldir:/usr/local/tomcat/ tomcat
+
+docker run -d \
+  --name my-nginx \
+  -p 80:80 \
+  --mount 'type=volume,source=mnt_shortcut,target=/usr/share/nginx/html,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt' \
+  nginx
+
 -----------------------------------------------------------------
 Docker Compose
 basic command to run docker Compose
@@ -162,3 +169,4 @@ docker tag imagename dockerhubusername/repositoryname:tag   #image name and repo
 docker run username/nameofrepo:tag
 docker image push anupdudhe/dockercomposenginx-frontendnginxfirst:latest
 
+-----------------------------------------------------------------------------------
